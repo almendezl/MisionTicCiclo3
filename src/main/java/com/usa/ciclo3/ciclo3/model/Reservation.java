@@ -58,11 +58,11 @@ public class Reservation {
         this.status = status;
     }
 
-    public Cinema getTool() {
+    public Cinema getCinema() {
         return cinema;
     }
 
-    public void setTool(Cinema cinema) {
+    public void setCinema(Cinema cinema) {
         this.cinema = cinema;
     }
 

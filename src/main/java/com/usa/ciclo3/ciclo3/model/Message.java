@@ -37,11 +37,11 @@ public class Message {
         this.messageText = messageText;
     }
 
-    public Cinema getTool() {
+    public Cinema getCinema() {
         return cinema;
     }
 
-    public void setTool(Cinema cinema) {
+    public void setCinema(Cinema cinema) {
         this.cinema = cinema;
     }
 

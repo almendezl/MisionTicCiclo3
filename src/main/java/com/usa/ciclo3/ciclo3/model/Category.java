@@ -43,11 +43,11 @@ public class Category {
         this.description = description;
     }
 
-    public List<Cinema> getTools() {
+    public List<Cinema> getCinemas() {
         return cinemas;
     }
 
-    public void setTools(List<Cinema> cinemas) {
+    public void setCinemas(List<Cinema> cinemas) {
         this.cinemas = cinemas;
     }
 
