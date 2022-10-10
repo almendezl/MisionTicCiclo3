@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/Category")
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
-    @CrossOrigin(origins = "http://127.0.0.1:8887")
+
     @GetMapping("/all")
     public List<Category> getAll(){
         return categoryService.getAll();
