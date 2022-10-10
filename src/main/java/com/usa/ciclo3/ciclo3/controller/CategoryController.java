@@ -14,7 +14,7 @@ import java.util.Optional;
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
-
+    @CrossOrigin(origins = "http://127.0.0.1:8887")
     @GetMapping("/all")
     public List<Category> getAll(){
         return categoryService.getAll();
