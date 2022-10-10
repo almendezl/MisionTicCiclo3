@@ -1,19 +1,20 @@
-package com.usa.ciclo3.ciclo3.entities;
+package com.usa.ciclo3.ciclo3.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "category")
-public class Category implements Serializable {
+public class Category {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String description;
+
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "category")
     @JsonIgnoreProperties("category")
     private List<Cinema> cinemas;
@@ -42,11 +43,12 @@ public class Category implements Serializable {
         this.description = description;
     }
 
-    public List<Cinema> getCinemas() {
+    public List<Cinema> getTools() {
         return cinemas;
     }
 
-    public void setCinemas(List<Cinema> cinemas) {
+    public void setTools(List<Cinema> cinemas) {
         this.cinemas = cinemas;
     }
+
 }

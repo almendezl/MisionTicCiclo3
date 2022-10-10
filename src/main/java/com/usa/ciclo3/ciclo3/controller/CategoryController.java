@@ -1,26 +1,34 @@
 package com.usa.ciclo3.ciclo3.controller;
 
-import com.usa.ciclo3.ciclo3.entities.Category;
-import com.usa.ciclo3.ciclo3.entities.Product;
-import com.usa.ciclo3.ciclo3.repository.service.CategoryService;
-import com.usa.ciclo3.ciclo3.repository.service.ProductService;
+import com.usa.ciclo3.ciclo3.model.Category;
+import com.usa.ciclo3.ciclo3.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@RestController
-@RequestMapping("/category")
-public class CategoryController {
+import java.util.Optional;
 
+@RestController
+@RequestMapping("/api/Category")
+public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
     @GetMapping("/all")
     public List<Category> getAll(){
-        return  categoryService.getAll();
+        return categoryService.getAll();
     }
+
+    @GetMapping("/{id}")
+    public Optional<Category> getCategory(@PathVariable("id") int id){
+        return categoryService.getCategory(id);
+    }
+
     @PostMapping("/save")
-    public Category save(@RequestBody Category p){
-        return categoryService.save(p);
+    @ResponseStatus(HttpStatus.CREATED)
+    public Category save (@RequestBody Category category){
+        return categoryService.save(category);
     }
+
 }

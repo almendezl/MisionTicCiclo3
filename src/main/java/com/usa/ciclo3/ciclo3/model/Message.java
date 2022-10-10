@@ -1,26 +1,24 @@
-package com.usa.ciclo3.ciclo3.entities;
+package com.usa.ciclo3.ciclo3.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import java.io.Serializable;
-
 @Entity
 @Table(name = "message")
-public class Message implements Serializable {
+public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idMessage;
     private String messageText;
 
     @ManyToOne
-    @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("products")
+    @JoinColumn(name = "cinemaId")
+    @JsonIgnoreProperties({"messages","reservations"})
     private Cinema cinema;
 
     @ManyToOne
-    @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("products")
+    @JoinColumn(name = "clientId")
+    @JsonIgnoreProperties({"messages","reservations"})
     private Client client;
 
     public Integer getIdMessage() {
@@ -39,11 +37,11 @@ public class Message implements Serializable {
         this.messageText = messageText;
     }
 
-    public Cinema getCinema() {
+    public Cinema getTool() {
         return cinema;
     }
 
-    public void setCinema(Cinema cinema) {
+    public void setTool(Cinema cinema) {
         this.cinema = cinema;
     }
 
@@ -54,4 +52,5 @@ public class Message implements Serializable {
     public void setClient(Client client) {
         this.client = client;
     }
+
 }
