@@ -39,7 +39,7 @@ public class ClientService {
     public Client updateClient(Client client){
         if(client.getIdClient() != null ){
             Optional<Client> g = clientRepository.getClient(client.getIdClient());
-            if(!g.isPresent()){
+            if(g.isPresent()){
                 if(client.getEmail() != null ){
                     g.get().setEmail(client.getEmail());
                 }
