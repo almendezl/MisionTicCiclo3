@@ -1,5 +1,6 @@
 package com.usa.ciclo3.ciclo3.controller;
 
+import com.usa.ciclo3.ciclo3.model.Category;
 import com.usa.ciclo3.ciclo3.model.Cinema;
 import com.usa.ciclo3.ciclo3.service.CinemaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,12 @@ public class CinemaController {
         return cinemaService.save(cinema);
     }
 
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Cinema update(@RequestBody Cinema cinema){
+        return cinemaService.updateCinema(cinema);
+
+    }
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int id){
