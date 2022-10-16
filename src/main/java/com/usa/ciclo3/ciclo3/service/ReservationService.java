@@ -32,4 +32,12 @@ public class ReservationService {
             }
         }
     }
+
+    public boolean deleteReservation(int id){
+        Boolean d = getReservation(id).map(reservation ->{
+            reservationRepository.delete(reservation);
+            return true;
+        }).orElse(false);
+        return d;
+    }
 }

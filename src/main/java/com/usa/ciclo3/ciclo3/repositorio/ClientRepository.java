@@ -1,6 +1,7 @@
 package com.usa.ciclo3.ciclo3.repositorio;
 
 import com.usa.ciclo3.ciclo3.interfaces.ClientInterface;
+import com.usa.ciclo3.ciclo3.model.Cinema;
 import com.usa.ciclo3.ciclo3.model.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -24,5 +25,7 @@ public class ClientRepository {
     public Client save(Client client){
         return clientInterface.save(client);
     }
-
+    public void delete(Client client){
+        clientInterface.delete(client);
+    }
 }

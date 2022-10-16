@@ -33,4 +33,11 @@ public class CinemaService {
             }
         }
     }
+    public boolean deleteCinema(int id){
+        Boolean d = getCinema(id).map(cinema ->{
+            cinemaRepository.delete(cinema);
+            return true;
+        }).orElse(false);
+        return d;
+    }
 }

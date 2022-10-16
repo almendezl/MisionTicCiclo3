@@ -1,6 +1,7 @@
 package com.usa.ciclo3.ciclo3.repositorio;
 
 import com.usa.ciclo3.ciclo3.interfaces.ReservationInterface;
+import com.usa.ciclo3.ciclo3.model.Message;
 import com.usa.ciclo3.ciclo3.model.Reservation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -23,5 +24,9 @@ public class ReservationRepository {
 
     public Reservation save(Reservation reservation){
         return reservationInterface.save(reservation);
+    }
+
+    public void delete(Reservation reservation){
+        reservationInterface.delete(reservation);
     }
 }

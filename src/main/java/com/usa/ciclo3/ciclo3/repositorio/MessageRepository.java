@@ -1,6 +1,7 @@
 package com.usa.ciclo3.ciclo3.repositorio;
 
 import com.usa.ciclo3.ciclo3.interfaces.MessageInterface;
+import com.usa.ciclo3.ciclo3.model.Client;
 import com.usa.ciclo3.ciclo3.model.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -23,5 +24,9 @@ public class MessageRepository {
 
     public Message save(Message message){
         return messageInterface.save(message);
+    }
+
+    public void delete(Message message){
+        messageInterface.delete(message);
     }
 }

@@ -24,4 +24,8 @@ public class CategoryRepository {
         return categoryInterface.save(category);
     }
 
+    public void delete (Category category){
+        categoryInterface.delete(category);
+
+    }
 }

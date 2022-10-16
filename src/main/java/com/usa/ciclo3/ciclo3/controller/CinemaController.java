@@ -30,4 +30,10 @@ public class CinemaController {
     public Cinema save (@RequestBody Cinema cinema){
         return cinemaService.save(cinema);
     }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int id){
+        return cinemaService.deleteCinema(id);
+    }
 }

@@ -24,4 +24,8 @@ public class CinemaRepository {
     public Cinema save(Cinema cinema){
         return cinemaInterface.save(cinema);
     }
+
+    public void delete(Cinema cinema){
+        cinemaInterface.delete(cinema);
+    }
 }
